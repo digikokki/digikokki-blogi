@@ -1,0 +1,6 @@
+/.env
+/.idea
+/vendor
+/web/bower_components
+/node_modules
+.DS_Store

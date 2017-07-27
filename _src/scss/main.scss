@@ -1,0 +1,145 @@
+// Varialbes
+$whiteText        : #e5e5e5;
+$blackText        : #222;
+$brandColorLight  : #05477c;
+$brandColorDark   : #065b9f;
+$brandColorActive : #6EC4E9;
+
+$whiteText: #e5e5e5;
+$blackText: #3A3A3A;
+$lightBlackText: #606060;
+$brandColorActive: #6EC4E9;
+$lightText: #EDEDED;
+
+$html5: 					#f16529 !default;
+$css3: 						#33a9dc !default;
+$globe: 					#6ecd56 !default;
+$javascript: 			#f7df1e !default;
+
+.fa-html5, .html5{
+	color: $html5;
+}
+.fa-css3, .css3{
+	color: $css3;
+}
+.fa-globe, .globe{
+	color: $globe;
+}
+.fa-code, .javascript{
+	color: $javascript;
+}
+
+// Imports
+
+// inject:vendor
+@import "_src/scss/vendor/_fonts.scss";
+@import "_src/scss/vendor/_media-queries.scss";
+@import "_src/scss/vendor/font-awesome.min.scss";
+// endinject
+
+// bower:scss
+@import "web/bower_components/bootstrap/scss/bootstrap.scss";
+// endbower
+
+// inject:app
+@import "_src/scss/includes/_article.scss";
+@import "_src/scss/includes/_blogPost.scss";
+@import "_src/scss/includes/_footer.scss";
+@import "_src/scss/includes/_front-page.scss";
+@import "_src/scss/includes/_page-containers.scss";
+@import "_src/scss/includes/_panel-scroll.scss";
+@import "_src/scss/includes/_sidebar.scss";
+@import "_src/scss/includes/_top-bar.scss";
+@import "_src/scss/includes/_nav.scss";
+// endinject
+
+//Base
+*{
+	box-sizing: border-box;
+}
+
+:after, :before {
+  box-sizing: border-box
+}
+
+html{
+	height: 100%;
+}
+
+body{
+	height: 100%;
+  @include font("Open sans");
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+//Typography
+
+
+//DesktopFirst
+@include respond-to($desktop) {
+}
+
+//LaptopFirst
+@include respond-to($laptop) {
+}
+
+//TabletFirst
+@include respond-to($tablet) {
+
+}
+
+//MobileFirst
+@include respond-to($mobile) {
+}
+
+.sideBySideContainer{
+	display: flex;
+	flex: 1 0 auto;
+	position: relative;
+	.sideBySideItem{
+		&:first-child{
+			flex: 3;
+		}
+		&:last-child{
+			flex-grow: 1;
+			flex: 0 0 400px;
+		}
+		&.borderLine{
+			border-left: 1px solid #e4e4e4;
+		}
+	}
+}
+
+//LaptopFirst
+@include respond-to($laptop) {
+	.sideBySideContainer{
+		.sideBySideItem{
+			&:last-child{
+				flex: 0 0 320px;
+			}
+		}
+	}
+}
+
+//TabletFirst
+@include respond-to($tablet) {
+	.sideBySideContainer{
+		flex-direction: column;
+		.sideBySideItem{
+			&:first-child{
+				order: 2;
+				flex: 1;
+			}
+			&:last-child{
+				order: 1;
+				flex: 1;
+			}
+			&.borderLine{
+				border-left: 1px solid #e4e4e4;
+			}
+		}
+	}
+}
+
+// Include google fonts
+@include import-google-fonts();

@@ -1,0 +1,166 @@
+#pageSidebar{
+  background: #F2F6FB;
+  border-left: 1px solid #e4e4e4;
+  z-index: 100;
+}
+
+#pageSidebarContent{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#aboutContainer{
+  position: relative;
+  flex: 1;
+  background: white;
+  width: inherit;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  #aboutContent{
+    position: relative;
+    width: 280px;
+    h3{
+      @include font("Montserrat", 600);
+      font-size: 0.6em;
+      color: rgba(0, 0, 0, 0.44);
+      width: 50%;
+      text-transform: uppercase;
+    }
+    h2{
+      @include font("Montserrat", 600);
+      font-size: 1em;
+      width: 100%;
+    }
+    p{
+      font-size: 13px;
+      width: 100%;
+    }
+  }
+  img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity:0.15;
+  }
+}
+
+
+#videoContainer{
+  top: 300px;
+  height: 100%;
+  padding: 20px;
+  #videoContent{
+    input{
+      width: 100%;
+      border: none;
+      margin-bottom: 20px;
+      padding: 10px;
+    }
+    .jspPane{
+      margin: 0!important;
+      padding: 0!important;
+    }
+    #videoLinks{
+      width: 100%;
+      height: calc(70% - 160px);
+      overflow: auto;
+    }
+    #showAllVideos{
+
+    }
+    ul{
+      margin: 0;
+      padding: 0;
+      li{
+        list-style: none;
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        .videoThumbnail{
+          margin-right: 15px;
+          img{
+            width: 130px;
+          }
+        }
+        .videoInfo{
+          h4{
+            font-size: 0.8em;
+            line-height: 1.3em;
+          }
+          h6{
+            font-size: 0.7em;
+            opacity:0.5;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//LaptopFirst
+@include respond-to($laptop) {
+
+}
+
+//TabletFirst
+@include respond-to($tablet) {
+  #pageSidebarContent{
+    display: flex;
+    flex-direction: row;
+    #aboutContainer{
+      order: 2;
+      flex-basis: 40%;
+      height: 400px;
+    }
+    #videoContainer{
+      order: 1;
+      flex-basis: 60%;
+    }
+  }
+
+  #aboutContent{
+    padding: 15px;
+    height: 300px;
+    p{
+      font-size: 13px;
+      width: 100%;
+    }
+    img{
+      width: 70%;
+    }
+  }
+  #videoContent{
+    #videoLinks{
+      height: calc(70% - 160px);
+    }
+    ul{
+      li{
+        flex-direction: column;
+        align-items: left;
+      }
+    }
+  }
+}
+
+//MobileFirst
+@include respond-to($mobile) {
+  #pageSidebar{
+    border: none;
+    background:white;
+  }
+  #aboutContent{
+    position: relative;
+    padding: 0;
+    img{
+      z-index: 1;
+    }
+  }
+  #videoContent{
+    position: relative;
+  }
+}

@@ -1,0 +1,169 @@
+//MobileFirst
+#pageNav{
+  @include font("Montserrat");
+  background-color: #005189;
+  transition: .2s ease-out all;
+  transform: translateX(0%);
+  z-index: 100;
+  display: flex;
+  flex: 0;
+  flex-direction: column;
+  justify-content: center;
+  #pageNavHeading{
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #brandLogo{
+    width: 50px;
+    margin: 0 auto;
+    height: 100%;
+    align-self: flex-start;
+    margin: 0;
+    img:not(.png) {
+      width: 70%;
+    }
+    p{
+      display: none;
+    }
+  }
+  #mobileNav{
+    display: block;
+    color: white;
+    text-transform: uppercase;
+  }
+  #pageNavContent{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    color: white;
+    transition: .2s ease-out all;
+    transform: translateX(0%);
+    ul{
+      margin: 0;
+      margin-top: 10px;
+      padding: 0;
+      li{
+        list-style: none;
+      }
+    }
+    &.open{
+      display: block;
+      flex: 0 0 100%;
+      .siteLinkList{
+        margin: 0px 30px;
+        padding: 10px;
+        border-top: solid 1px $brandColorDark;
+      }
+      #pageLinks{
+        border-top: solid 1px $brandColorDark;
+        border-bottom: solid 1px $brandColorDark;
+        a{
+          color: white;
+          span{
+            opacity:1;
+            display: inline-block;
+            margin-left: 15px;
+          }
+        }
+        li{
+          margin: 15px 0px;
+          padding: 0px;
+          background: none;
+          border: none;
+          text-align: left;
+        }
+      }
+      #socialMediaLinks{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        a{
+          background: none;
+          border: none;
+          color: white;
+        }
+        li{
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+//Desktop
+@include respond-to($desktop) {
+  #pageNav{
+    box-sizing: border-box;
+    flex: 0 0 70px;
+    position: fixed;
+    width: 70px;
+    height: 100%;
+    justify-content: flex-start;
+    #pageNavHeading{
+      padding: 0px 4px;
+    }
+    #brandLogo{
+      width: 80%;
+      margin: 10px auto 10px auto;
+      border-radius: 100px;
+      text-align: center;
+    }
+    #mobileNav{
+      display: none;
+      color: white;
+      text-transform: uppercase;
+    }
+    #pageNavContent{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      color: white;
+      font-size: 0.7em;
+      .siteLinkList{
+        position: relative;
+        margin: 20px 0px;
+        margin-top: 5px;
+        padding: 20px 0px 0px 0px;
+        border-top: solid 1px $brandColorDark;
+        a{
+          text-transform: uppercase;
+        }
+        li{
+          margin-bottom: 20px;
+          text-align: center;
+          padding: 10px;
+        }
+        i{
+          font-size: 17px;
+          color: white!important;
+        }
+      }
+      .siteLinkList{
+        a{
+          span{
+            position: absolute;
+            display: inline-block;
+            opacity:0;
+            transform: translateX(0px);
+            color: white;
+            z-index: 20;
+            transition: all 0.15s ease-in-out;
+          }
+          &:hover{
+            span{
+              color: rgba(0,0,0,.44);
+              display: inline-block;
+              margin-left: 15px;
+              width: 150px;
+              opacity:1;
+              text-align: left;
+              transform: translateX(30px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

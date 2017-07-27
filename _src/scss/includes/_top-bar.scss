@@ -1,0 +1,22 @@
+//MobileFrist
+#topBar{
+  display: none;
+}
+
+//Desktop
+@include respond-to($desktop) {
+  #topBar{
+    display: block;
+    position: fixed;
+    width: 100%;
+    border-bottom: 1px solid #F3F3F3;
+    background: white;
+    z-index: 90;
+    #pageNameHeading{
+      font-size: 1rem;
+      @include font("Montserrat", 800);
+      text-transform: uppercase;
+      padding: 18px 0px;
+    }
+  }
+}

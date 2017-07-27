@@ -1,0 +1,32 @@
+{
+  "name": "digikokki",
+  "description": "Website",
+  "main": "index.js",
+  "authors": [
+    "Andreas Koutsoukos"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "nunjucks",
+    "node",
+    "gulp",
+    "stylus"
+  ],
+  "homepage": "www.digikokki.io",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.5"
+  },
+  "devDependencies": {
+    "bootstrap": "v4.0.0-alpha.5",
+    "jquery": "^3.2.1",
+    "vue": "^2.4.2"
+  }
+}

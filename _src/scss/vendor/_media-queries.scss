@@ -1,0 +1,52 @@
+
+$mobile             : '(max-width: 425px)';
+$tablet             : '(max-width: 768px)';
+$laptop             : '(max-width: 1024px)';
+$desktop            : '(min-width: 1024px)';
+
+$tablet-to-dekstop  : '(min-width: 480px)';
+
+$simpleRead         : '(max-width: 1200px)';
+
+$smallHeight        : '(max-height: 740px)';
+
+$tablet-portrait    : '(max-width: 767px)';
+$tablet-landscape   : '(min-width: 768px) and (max-width: 979px)';
+
+$non-retina         : 'screen and (-webkit-max-device-pixel-ratio: 1)';
+$retina             : '(min--moz-device-pixel-ratio: 1.5),
+                    (-o-min-device-pixel-ratio: 3/2),
+                    (-webkit-min-device-pixel-ratio: 1.5),
+                    (min-device-pixel-ratio: 1.5),
+                    (min-resolution: 144dpi),
+                    (min-resolution: 1.5dppx)';
+
+
+
+
+@mixin respond-to($media) {
+    @media only screen and #{$media} {
+        @content;
+    }
+}
+
+
+//DesktopFirst
+@include respond-to($desktop) {
+
+}
+
+//LaptopFirst
+@include respond-to($laptop) {
+
+}
+
+//TabletFirst
+@include respond-to($tablet) {
+
+}
+
+//MobileFirst
+@include respond-to($mobile) {
+
+}

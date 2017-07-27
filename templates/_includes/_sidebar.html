@@ -1,0 +1,42 @@
+{% block pagesidebar %}
+<div id="pageSidebarContent">
+  <div id="aboutContainer">
+    <div id="aboutContent">
+      <h3>Digikokki</h3>
+      <h2>{{ aboutSiteDetails.admin }}</h2>
+      <p>{{ aboutSiteDetails.about }}</p>
+    </div>
+    <img src="img/profile-image.png"/>
+  </div>
+  <div id="videoContainer">
+    <div id="videoContent">
+    <input type="text" name="" value="" placeholder="etsi videota">
+    <ul id="videoLinks">
+      {% paginate craft.entries.section('youtubeVideo').limit(blogSettings.postsPerPage) as info, entries %}
+      {% for entry in entries %}
+        <li>
+          <a href="{{entry.youtubeLink}}">
+          <div class="videoThumbnail">
+            {% set youtubeThumpnail = "" %}
+            {% set img_transform = {
+              mode: 'fit',
+              width: 600
+            } %}
+            {% for asset in entry.youtubeThumpnail %}
+              {% set youtubeThumpnail = asset.getUrl(img_transform) %}
+            {% endfor %}
+            <img class="img-fluid" src="{{youtubeThumpnail}}" alt="{{entry.title}}">
+          </div>
+          </a>
+          <div class="videoInfo">
+            <a href="{{entry.youtubeLink}}"><h4>{{ entry.title }}</h4></a>
+            <h6><a href="#">#reactjs</a> &middot; <span>3 vko</span></h6>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+    <a href="#" id="showAllVideos">Näytä kaikki</a>
+  </div>
+  </div>
+</div>
+{% endblock %}

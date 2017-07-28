@@ -12,8 +12,8 @@
     <div id="videoContent">
       <div id="youtubelist">
           <input type="text" placeholder="Etsi videota" v-model="searchkeyword">
-          <ul id="videoLinks">
-      			<li v-for="youtubeLink in filteredlist">
+          <paginate id="videoLinks" name="filteredlist" class="paginate-list" :list="filteredlist" :per="2">
+      			<li v-for="youtubeLink in paginated('filteredlist')">
               <a href="#">
                 <div class="videoThumbnail">
                   <img v-bind:src="youtubeLink.image" lass="img-fluid"  alt="youtubeLink.title" />
@@ -24,7 +24,11 @@
                 <h6><a href="#">#${youtubeLink.category}</a> &middot; <span>Julkaistu: ${youtubeLink.date_published}</span></h6>
               </div>
             </li>
-      		</ul>
+          </paginate>
+          <paginate-links for="filteredlist" :simple="{
+            next: 'Next »',
+            prev: '« Back'
+          }"></paginate-links>
     	</div>
       <a href="#" id="showAllVideos">Näytä kaikki</a>
     </div>

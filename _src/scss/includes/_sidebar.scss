@@ -14,12 +14,8 @@
   position: relative;
   flex: 1;
   background: white;
-  width: inherit;
   width: 100%;
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 3em 2em;
   #aboutContent{
     position: relative;
     width: 280px;
@@ -67,7 +63,6 @@
     #videoLinks{
       width: 100%;
       height: calc(70% - 160px);
-      overflow: auto;
     }
     #showAllVideos{
 
@@ -78,22 +73,65 @@
       li{
         list-style: none;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         margin-bottom: 20px;
         .videoThumbnail{
           margin-right: 15px;
+          max-height: 75px;
+          position: relative;
+          display: inline-block;
+          background-color: #fff;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+          -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+          transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+          &:before{
+            content: "";
+          }
+          &:after {
+            content: "";
+            border-radius: 5px;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+          }
           img{
+            position: relative;
+          	display: block;
+          	flex: none;
             width: 130px;
+          }
+          &:hover{
+            -webkit-transform: scale(1.08, 1.08);
+            transform: scale(1.08, 1.08);
+            &:after {
+              opacity: 1;
+            }
           }
         }
         .videoInfo{
           h4{
-            font-size: 0.8em;
+            font-size: 0.9em;
             line-height: 1.3em;
+            color: #3A3A3A;
+            @include font("Montserrat", 400);
           }
           h6{
             font-size: 0.7em;
             opacity:0.5;
+            a{
+              color: #004A97;
+            }
+            @include font("Montserrat", 400);
+            span{
+              color: #797979;
+            }
           }
         }
       }

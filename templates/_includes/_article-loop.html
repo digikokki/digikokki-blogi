@@ -8,16 +8,17 @@
       {% for category in categories %}
       <a href="{{ category.url }}"><h3>#{{ category.title }}</h3></a>
       {% endfor %}
-      <a href="/blog-post.html"><h1>{{ entry.title }}</h1></a>
+      <a href="{{ entry.url }}"><h1>{{ entry.title }}</h1></a>
       <p class="time">Julkaistu: <time>{{ entry.postDate | date("m.d.Y") }}</time> · 3 kommenttia</p>
     </header>
     <section>
       <article class="articleListing">
-        <div class="articleContent">
+        <main class="articleContent">
           <h2>{{entry.subTitle}}</h2>
-          {% set paragraphs = entry.body|split('</p>') %}
+          { entry.body|striptags|slice(0,100)|default('Read more') }}
+          {% set paragraphs = entry.body|split('</p>')|striptags|slice(0,100)|default('Read more') %}
           {% set teaser = paragraphs|first ~ '</p>' %}
-          {{ teaser|raw }}
+          {{ teaser | raw }}
           <a href="#">Lue koko artikkeli</a>
         </div>
         {% if entry.featuredImage | length %}
@@ -35,7 +36,7 @@
               <img class="img-fluid" src="{{featuredImage}}" alt="{{entry.title}}">
             {% endif %}
           </a>
-        </div>
+        </main>
         {% endif %}
       </article>
     </section>

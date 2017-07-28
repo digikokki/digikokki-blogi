@@ -92,54 +92,8 @@ body{
 @include respond-to($mobile) {
 }
 
-.sideBySideContainer{
-	display: flex;
-	flex: 1 0 auto;
-	position: relative;
-	.sideBySideItem{
-		&:first-child{
-			flex: 3;
-		}
-		&:last-child{
-			flex-grow: 1;
-			flex: 0 0 400px;
-		}
-		&.borderLine{
-			border-left: 1px solid #e4e4e4;
-		}
-	}
-}
 
-//LaptopFirst
-@include respond-to($laptop) {
-	.sideBySideContainer{
-		.sideBySideItem{
-			&:last-child{
-				flex: 0 0 320px;
-			}
-		}
-	}
-}
 
-//TabletFirst
-@include respond-to($tablet) {
-	.sideBySideContainer{
-		flex-direction: column;
-		.sideBySideItem{
-			&:first-child{
-				order: 2;
-				flex: 1;
-			}
-			&:last-child{
-				order: 1;
-				flex: 1;
-			}
-			&.borderLine{
-				border-left: 1px solid #e4e4e4;
-			}
-		}
-	}
-}
 
 // Include google fonts
 @include import-google-fonts();

@@ -12,7 +12,7 @@
     <div id="videoContent">
       <div id="youtubelist">
           <input type="text" placeholder="Etsi videota" v-model="searchkeyword">
-          <paginate id="videoLinks" name="filteredlist" class="paginate-list" :list="filteredlist" :per="2">
+          <paginate id="videoLinks" name="filteredlist" class="paginate-list" :list="filteredlist" :per="4">
       			<li v-for="youtubeLink in paginated('filteredlist')">
               <a href="#">
                 <div class="videoThumbnail">
@@ -25,12 +25,8 @@
               </div>
             </li>
           </paginate>
-          <paginate-links for="filteredlist" :simple="{
-            next: 'Next »',
-            prev: '« Back'
-          }"></paginate-links>
+          <paginate-links for="filteredlist" :simple="{next: 'Seuraavat »',prev: '« Edelliset'}"></paginate-links>
     	</div>
-      <a href="#" id="showAllVideos">Näytä kaikki</a>
     </div>
   </div>
 </div>

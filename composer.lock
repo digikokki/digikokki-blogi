@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1ee741dbbd6e9511ff707f1bc3763c8b",
+    "content-hash": "6992d92178e0e953f3c45a9f7894a9d0",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -1066,6 +1066,92 @@
             "time": "2017-06-11T23:08:25+00:00"
         },
         {
+            "name": "erusev/parsedown",
+            "version": "1.6.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/erusev/parsedown.git",
+                "reference": "728952b90a333b5c6f77f06ea9422b94b585878d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/728952b90a333b5c6f77f06ea9422b94b585878d",
+                "reference": "728952b90a333b5c6f77f06ea9422b94b585878d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Parsedown": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emanuil Rusev",
+                    "email": "hello@erusev.com",
+                    "homepage": "http://erusev.com"
+                }
+            ],
+            "description": "Parser for Markdown.",
+            "homepage": "http://parsedown.org",
+            "keywords": [
+                "markdown",
+                "parser"
+            ],
+            "time": "2017-05-14T14:47:48+00:00"
+        },
+        {
+            "name": "erusev/parsedown-extra",
+            "version": "0.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/erusev/parsedown-extra.git",
+                "reference": "0db5cce7354e4b76f155d092ab5eb3981c21258c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/0db5cce7354e4b76f155d092ab5eb3981c21258c",
+                "reference": "0db5cce7354e4b76f155d092ab5eb3981c21258c",
+                "shasum": ""
+            },
+            "require": {
+                "erusev/parsedown": "~1.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ParsedownExtra": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emanuil Rusev",
+                    "email": "hello@erusev.com",
+                    "homepage": "http://erusev.com"
+                }
+            ],
+            "description": "An extension of Parsedown that adds support for Markdown Extra.",
+            "homepage": "https://github.com/erusev/parsedown-extra",
+            "keywords": [
+                "markdown",
+                "markdown extra",
+                "parsedown",
+                "parser"
+            ],
+            "time": "2015-11-01T10:19:22+00:00"
+        },
+        {
             "name": "ezyang/htmlpurifier",
             "version": "v4.9.3",
             "source": {
@@ -1503,6 +1589,106 @@
                 "rest"
             ],
             "time": "2017-03-12T01:28:43+00:00"
+        },
+        {
+            "name": "luwes/craft3-codemirror",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/luwes/craft3-codemirror.git",
+                "reference": "8bad7cb0e94158cf3cbfec7eea679201ae007bf2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/luwes/craft3-codemirror/zipball/8bad7cb0e94158cf3cbfec7eea679201ae007bf2",
+                "reference": "8bad7cb0e94158cf3cbfec7eea679201ae007bf2",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "~3.0.0-beta.1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "CodeMirror",
+                "handle": "codeMirror",
+                "schemaVersion": "1.0.0",
+                "changelogUrl": "https://raw.githubusercontent.com/luwes/craft3-codemirror/master/CHANGELOG.md",
+                "class": "luwes\\codemirror\\CodeMirror"
+            },
+            "autoload": {
+                "psr-4": {
+                    "luwes\\codemirror\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Wesley Luyten",
+                    "homepage": "https://wesleyluyten.com"
+                }
+            ],
+            "description": "Add the awesome in-browser code editor CodeMirror as a field type.",
+            "keywords": [
+                "Craft",
+                "cms",
+                "codemirror",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "time": "2017-03-27T03:06:24+00:00"
+        },
+        {
+            "name": "michelf/php-smartypants",
+            "version": "1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michelf/php-smartypants.git",
+                "reference": "47d17c90a4dfd0ccf1f87e25c65e6c8012415aad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michelf/php-smartypants/zipball/47d17c90a4dfd0ccf1f87e25c65e6c8012415aad",
+                "reference": "47d17c90a4dfd0ccf1f87e25c65e6c8012415aad",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Michelf": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Michel Fortin",
+                    "email": "michel.fortin@michelf.ca",
+                    "homepage": "https://michelf.ca/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "John Gruber",
+                    "homepage": "https://daringfireball.net/"
+                }
+            ],
+            "description": "PHP SmartyPants",
+            "homepage": "https://michelf.ca/projects/php-smartypants/",
+            "keywords": [
+                "dashes",
+                "quotes",
+                "spaces",
+                "typographer",
+                "typography"
+            ],
+            "time": "2016-12-13T01:01:17+00:00"
         },
         {
             "name": "mikehaertl/php-shellcommand",
@@ -1972,6 +2158,66 @@
                 "phra"
             ],
             "time": "2015-10-13T18:44:15+00:00"
+        },
+        {
+            "name": "selvinortiz/doxter",
+            "version": "3.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/selvinortiz/craft-plugin-doxter.git",
+                "reference": "52e40c6a7273e7026f99a634a86b70e4e2714860"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/selvinortiz/craft-plugin-doxter/zipball/52e40c6a7273e7026f99a634a86b70e4e2714860",
+                "reference": "52e40c6a7273e7026f99a634a86b70e4e2714860",
+                "shasum": ""
+            },
+            "require": {
+                "erusev/parsedown": "^1.6",
+                "erusev/parsedown-extra": "^0.7.1",
+                "michelf/php-smartypants": "^1.8"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Doxter",
+                "class": "selvinortiz\\doxter\\Doxter",
+                "handle": "doxter",
+                "schemaVersion": "3.0.0",
+                "developer": "Selvin Ortiz",
+                "developerUrl": "https://selvinortiz.com",
+                "description": "Markdown Editor & Parser for Craft 3",
+                "documentationUrl": "https://github.com/selvinortiz/craft-plugin-doxter/blob/master/README.md",
+                "changelogUrl": "https://raw.githubusercontent.com/selvinortiz/craft-plugin-doxter/master/CHANGELOG.md",
+                "hasCpSection": false,
+                "hasCpSettings": false,
+                "components": {
+                    "api": "selvinortiz\\doxter\\services\\DoxterService"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "selvinortiz\\doxter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Selvin Ortiz",
+                    "email": "selvin@selvin.co"
+                }
+            ],
+            "description": "Markdown Editor & Parser for Craft 3",
+            "keywords": [
+                "Craft",
+                "craftcms",
+                "doxter",
+                "plugin"
+            ],
+            "time": "2017-07-29T02:12:30+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

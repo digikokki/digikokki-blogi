@@ -40,7 +40,7 @@ config.browserSync = {
 };
 
 // -------------------- Require Statements --------------------
-var gulp             = require('gulp'),
+var gulp           = require('gulp'),
 	autoprefixer     = require('gulp-autoprefixer'),
 	concat           = require('gulp-concat'),
 	livereload       = require('gulp-livereload'),
@@ -59,7 +59,8 @@ var gulp             = require('gulp'),
 	lazypipe         = require('lazypipe'),
 	inject           = require('gulp-inject'),
 	wiredep          = require('wiredep').stream,
-	fs               = require('fs');
+	fs               = require('fs'),
+	browserify 			 = require('browserify');
 
 // -------------------- Notification Icon Detection --------------------
 /**
@@ -165,8 +166,22 @@ gulp.task('inject-sass', ['styles'], function(){
 
 	var injectBowerFiles = gulp.src('web/bower_components/**/*.scss', {read: false});
 
+	var injectShoelaceFiles = gulp.src('node_modules/shoelace-css/source/css/*.css', {read: false});
+
+	var injectShoelaceOptions = {
+    transform: transformFilepathExtension,
+    starttag: '// inject:shoelace',
+    endtag: '// endinject',
+    addRootSlash: false
+  };
+
+
   function transformFilepath(filepath) {
    return '@import "' + filepath + '";';
+  }
+
+	function transformFilepathExtension(filepath, file) {
+   return '@import "' + filepath.replace(/\.[^.$]+$/, '') + '";';
   }
 
   return gulp.src('_src/scss/main.scss')
@@ -182,6 +197,7 @@ gulp.task('inject-sass', ['styles'], function(){
 		}))
     .pipe(inject(injectVendorFiles,injectVendorOptions))
     .pipe(inject(injectAppFiles, injectAppOptions))
+		.pipe(inject(injectShoelaceFiles, injectShoelaceOptions))
     .pipe(gulp.dest('./_src/scss'));
 });
 

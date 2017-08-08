@@ -38,19 +38,37 @@ $javascript: 			#f7df1e !default;
 // endinject
 
 // bower:scss
-@import "web/bower_components/bootstrap/scss/bootstrap.scss";
 // endbower
+
+//Soe
+
+// inject:shoelace
+@import "node_modules/shoelace-css/source/css/alerts";
+@import "node_modules/shoelace-css/source/css/badges";
+@import "node_modules/shoelace-css/source/css/buttons";
+@import "node_modules/shoelace-css/source/css/content";
+@import "node_modules/shoelace-css/source/css/forms";
+@import "node_modules/shoelace-css/source/css/loaders";
+@import "node_modules/shoelace-css/source/css/normalize";
+@import "node_modules/shoelace-css/source/css/shoelace";
+@import "node_modules/shoelace-css/source/css/switches";
+@import "node_modules/shoelace-css/source/css/tables";
+@import "node_modules/shoelace-css/source/css/tabs";
+@import "node_modules/shoelace-css/source/css/utilities";
+@import "node_modules/shoelace-css/source/css/variables";
+// endinject
+
 
 // inject:app
 @import "_src/scss/includes/_article.scss";
 @import "_src/scss/includes/_blogPost.scss";
 @import "_src/scss/includes/_footer.scss";
 @import "_src/scss/includes/_front-page.scss";
+@import "_src/scss/includes/_nav.scss";
 @import "_src/scss/includes/_page-containers.scss";
 @import "_src/scss/includes/_panel-scroll.scss";
 @import "_src/scss/includes/_sidebar.scss";
 @import "_src/scss/includes/_top-bar.scss";
-@import "_src/scss/includes/_nav.scss";
 // endinject
 
 //Base
@@ -71,6 +89,12 @@ body{
   @include font("Open sans");
 	-webkit-font-smoothing: subpixel-antialiased;
 }
+
+:root {
+  --color-primary: $brandColorLight;
+}
+
+
 
 //Typography
 

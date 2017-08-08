@@ -11,6 +11,7 @@
   "devDependencies": {
     "axios": "^0.16.2",
     "browser-sync": "^2.18.13",
+    "browserify": "^14.4.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-concat": "^2.6.1",
@@ -28,6 +29,7 @@
     "gulp-watch": "^4.3.11",
     "lazypipe": "^1.0.1",
     "node-sass": "^3.13.1",
+    "shoelace-css": "^1.0.0-beta7",
     "wiredep": "^4.0.0"
   }
 }

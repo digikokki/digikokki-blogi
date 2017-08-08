@@ -1,16 +1,10 @@
+<div id="pageBody">
 {% block article %}
 {% paginate craft.entries.section('blog').limit(blogSettings.postsPerPage) as info, entries %}
 <div id="articleContainerList">
   {% for entry in entries %}
   <article class="articleListContent">
-    <header>
-      {% set categories = craft.categories.relatedTo(entry).level(1).limit(1) %}
-      {% for category in categories %}
-      <a href="{{ category.url }}"><h3>#{{ category.title }}</h3></a>
-      {% endfor %}
-      <a href="{{ entry.url }}"><h1>{{ entry.title }}</h1></a>
-      <p class="time">Julkaistu: <time>{{ entry.postDate | date("m.d.Y") }}</time> · 3 kommenttia</p>
-    </header>
+    {% include "_includes/_article-header.html" with {'currentNav':'homePage'} %}
     <section>
       <main class="articleListing">
         <div class="articleContent">
@@ -49,3 +43,4 @@
   {% endif %}
 </div>
 {% endblock %}
+</div>

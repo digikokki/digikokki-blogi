@@ -1,5 +1,5 @@
 // MobileFist
-.articleListContent{
+.articleListContent, .articleSingleContent{
   position: relative;
   margin-bottom: 110px;
   padding-bottom: 70px;
@@ -7,17 +7,29 @@
 
   header{
     margin-bottom: 24px;
-    h3{
+    h6{
       text-transform: uppercase;
+    }
+    h1{
+      margin-top: 5px;
+      margin-bottom: 10px;
     }
     .time{
       @include font("Montserrat", 300);
-      color: #878787;
+      color: #C1C1C1;
       font-size: 14px;
+      margin-top: 5px;
+      margin-bottom: 10px;
     }
     a{
       &:hover{
         text-decoration: none;
+      }
+    }
+    .social-sharing{
+      margin-top: 32px;
+      i{
+        font-size: 18px;
       }
     }
   }
@@ -25,12 +37,7 @@
   main{
     display: flex;
     flex-direction: column;
-    .articleContent{
-      flex: 0 0 80%;
-      a{
-        display: block;
-      }
-    }
+    margin-top: 32px;
     .articleCoverImage{
       order: 1;
       flex: 0 0 200px;
@@ -38,28 +45,60 @@
   }
 
   h1{ /*MainTitle*/
-    @include font("Montserrat", 600);
+    @include font("Montserrat", 500);
     font-size: 27px;
-    text-transform: uppercase;
   }
   h2{ /*SecondaryTitle*/
     @include font("Montserrat", 400);
-    color: $blackText;
-    font-size: 20px;
+    color: #404B51;
+    font-size: 22px;
   }
-  h3{ /*CategoryTitle*/
-    @include font("Montserrat", 400);
-    color: $lightText;
+  h3{
+    @include font("Montserrat", 500);
+  }
+  h4{
+    @include font("Montserrat", 500);
+  }
+  h6{ /*CategoryTitle*/
+    @include font("Montserrat", 500);
     font-size: 13px;
   }
   p{
     @include font("Montserrat", 300);
-    font-size: 1em;
+    //font-size: 0.85em;
     line-height: 1.58;
     letter-spacing: -.003em;
-    color: $lightBlackText;
+    margin: 24px 0px;
+    color: #666666;
+    strong{
+      @include font("Montserrat", 500);
+      color: #444444;
+    }
+    a{
+      color: #004A97;
+      text-decoration: underline;
+    }
   }
+  ul, ol{
+    margin: 32px 0px 32px 20px;
+    padding: 0px;
+    li{
+      color: #666666;
+      margin: 14px 0;
+    }
+  }
+  pre{
+    margin: 2.5em 0!important;
+  }
+  iframe{
+    min-width: 100%;
+  }
+  figure{
+    margin: 25px 0;
+    figcaption{
 
+    }
+  }
 }
 
 //Desktop
@@ -69,9 +108,17 @@
       display: flex;
       flex-direction: row;
       .articleContent{
+        flex: 0 0 80%;
       }
       .articleCoverImage{
         order: 1;
+      }
+    }
+  }
+  .articleSingleContent{
+    main{
+      .articleContent{
+        flex: 0 0 100%;
       }
     }
   }

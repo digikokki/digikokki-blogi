@@ -36,22 +36,21 @@
     },
     mounted() {
       axios.get("http://cms-digikokki:8888/api/v1/youtube.json").then(response => {
-        console.log(response.data)
+        //console.log(response.data)
         this.youtubeLinks = response.data.data;
       });
     },
     computed: {
-     /* OLD ONE
-     filteredlist(){
-       // filer() returns an array, filter((what) => { return the thing that includes the search keyword })
-       return this.youtubeLinks.filter((data) => {
-         return data.title.toLowerCase().includes(this.searchkeyword.toLowerCase());
-       });
-     },
-     */
      filteredlist () {
        const re = new RegExp(this.searchkeyword, 'i')
        return this.youtubeLinks.filter(data => data.title.match(re))
      }
     }
   })
+
+  var elements = document.querySelectorAll('pre');
+
+  if(elements !== null)
+  Array.prototype.forEach.call(elements, function(el, i){
+      el.innerHTML = '<code class="' + el.className + '">' +  el.innerHTML + '</code>';
+  });

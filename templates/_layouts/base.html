@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="{{ siteUrl }}css/main.min.css">
+    <link rel="stylesheet" href="{{ siteUrl }}bower_components/prism/themes/prism-okaidia.css">
+  </head>
+<body id="siteWrapper" {% if bodyClass is defined %}class="{{ bodyClass }}"{% endif %}>
+  {% block body %}{% endblock %}
+	{% block foot %}{% endblock %}
+  <script src="{{ siteUrl }}bower_components/vue/dist/vue.min.js"></script>
+  <script src="{{ siteUrl }}bower_components/axios/dist/axios.min.js"></script>
+  <script src="{{ siteUrl }}bower_components/vue-social-sharing/dist/vue-social-sharing.min.js"></script>
+  <script src="{{ siteUrl }}bower_components/prism/prism.js"></script>
+  <script src="{{ siteUrl }}js/vue-paginate.min.js"></script>
+  <script src="{{ siteUrl }}js/scripts.js"></script>
+</body>
+</html>

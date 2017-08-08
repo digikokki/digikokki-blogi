@@ -1,4 +1,25 @@
-{% extends "_includes/_layout" %}
-{% block content %}
-{% include "_includes/_article-list.html" %}
+{% extends "_layouts/site" %}
+
+{% block main %}
+{% if entry.featuredImage | length %}
+  {% set featuredImage = "" %}
+
+  {% for asset in entry.featuredImage %}
+    {% set featuredImage = asset.getUrl() %}
+  {% endfor %}
+  <div id="pageHeading" style="background:url({{featuredImage}});"></div>
+
+{% endif %}
+<div id="pageBody">
+  <article class="articleSingleContent">
+    {% include "_includes/_article-header.html" with {'currentNav':'singleArticle'} %}
+    <main class="articleListing">
+      <div class="articleContent">
+        <h2>{{entry.subTitle}}</h2>
+        {{ entry.body }}
+      </div>
+    </main>
+  </article>
+
+</div>
 {% endblock %}

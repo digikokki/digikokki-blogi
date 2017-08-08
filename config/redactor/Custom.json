@@ -1,0 +1,20 @@
+{
+  "buttons": ["formatting", "bold", "italic", "unorderedlist", "orderedlist", "link", "image", "video"],
+  "plugins": ["source", "fullscreen", "video"],
+  "toolbarFixed": true,
+  "formatting": ["p", "blockquote", "pre", "h3", "h4", "h5"],
+  "formattingAdd": {
+    "html": {
+        "title": "HTML Code",
+        "args": ["pre", "class", "language-html"]
+    },
+    "js": {
+      "title": "Javascript Code",
+      "args": ["pre", "class", "language-js"]
+    },
+    "css": {
+      "title": "Css Code",
+      "args": ["pre", "class", "language-css"]
+    }
+  }
+}

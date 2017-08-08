@@ -15,18 +15,11 @@
   margin: 2em;
 }
 
-#pageNav{
-  order: -1;
-  background: rgba(147, 128, 108, 0.1);
-}
-
-#pageSidebar{
-  background: rgba(147, 128, 108, 0.1);
-}
-
 #pageFooter{
   display: block;
 }
+
+
 
 //Desktop
 @include respond-to($desktop) {
@@ -34,14 +27,26 @@
   	flex-direction: row;
   }
 
-  #pageContent{
+	#pageContent{
     flex: 1;
-    max-width: 920px;
+		margin: 0em;
+  }
+
+	#pageHeading{
+		padding-left: 70px;
+		width: 100%;
+		height: 400px;
+		background-size: cover !important;
+		background-position: center center !important;
+	}
+
+	#pageBody{
+		max-width: 920px;
     padding: 0 2em;
     margin: 0 auto;
-		margin-top: 150px;
+		margin-top: 4em;
     padding-left: 120px;
-  }
+	}
 
   #pageNav{
     flex: 0 0 70px;
@@ -51,4 +56,9 @@
     flex: 0 0 400px;
 		min-width: 0;
   }
+	.homepage{
+		#pageBody{
+			margin-top: 100px;
+		}
+	}
 }

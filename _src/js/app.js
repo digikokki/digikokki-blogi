@@ -1,4 +1,8 @@
-  console.log('Hello Vue!!');
+  import '../scss/main.scss';
+  import VuePaginate from 'vue-paginate'
+  Vue.use(VuePaginate)
+
+  console.log('Hello Vue and Webpack!!');
 
   var desktopOnly = window.matchMedia( "(min-width: 1024px)" );
 

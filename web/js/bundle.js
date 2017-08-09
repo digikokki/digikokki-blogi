@@ -1,10 +1,148 @@
-/**
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_paginate__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_paginate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_paginate__);
+  
+  Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_paginate___default.a)
+
+  console.log('Hello Vue and Webpack!!');
+
+  var desktopOnly = window.matchMedia( "(min-width: 1024px)" );
+
+  // Add a listen event
+  desktopOnly.addListener(mobileToDesktop);
+  // Function to do something with the media query
+  function mobileToDesktop(desktopOnly) {
+    if (desktopOnly.matches) {
+       document.getElementById('pageNavContent').classList.remove('open');
+    } else {
+    }
+  }
+  // On load
+  mobileToDesktop(desktopOnly);
+
+  var toggleMobileNav = new Vue({
+    el: '#pageNavContainer',
+    data: {
+        navOpen: false
+    },
+    methods: {
+      toggleClass: function() {
+           this.navOpen = !this.navOpen;
+      }
+    },
+  })
+
+  var searchYoutube = new Vue({
+    delimiters: ['${', '}'],
+    el: '#youtubelist',
+    data:{
+      searchkeyword: '',
+      youtubeLinks:[],
+      paginate: ['filteredlist']
+    },
+    mounted() {
+      axios.get("http://cms-digikokki:8888/api/v1/youtube.json").then(response => {
+        //console.log(response.data)
+        this.youtubeLinks = response.data.data;
+      });
+    },
+    computed: {
+     filteredlist () {
+       const re = new RegExp(this.searchkeyword, 'i')
+       return this.youtubeLinks.filter(data => data.title.match(re))
+     }
+    }
+  })
+
+  var elements = document.querySelectorAll('pre');
+
+  if(elements !== null)
+  Array.prototype.forEach.call(elements, function(el, i){
+      el.innerHTML = '<code class="' + el.className + '">' +  el.innerHTML + '</code>';
+  });
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {/**
  * vue-paginate v3.5.0
  * (c) 2017 Taha Shashtari
  * @license MIT
  */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+   true ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
   (global.VuePaginate = factory());
 }(this, function () { 'use strict';
@@ -556,7 +694,7 @@
     if (config.errorHandler) {
       config.errorHandler.call(null, err, vm, info);
     } else {
-      if ("production" !== 'production') {}
+      if (false) {}
       /* istanbul ignore else */
       if (inBrowser && typeof console !== 'undefined') {
         console.error(err);
@@ -989,7 +1127,7 @@
           return
         }
         /* eslint-enable no-self-compare */
-        if ("production" !== 'production' && customSetter) {}
+        if (false) {}
         if (setter) {
           setter.call(obj, newVal);
         } else {
@@ -1258,7 +1396,7 @@
         if (typeof val === 'string') {
           name = camelize(val);
           res[name] = { type: null };
-        } else if ("production" !== 'production') {}
+        } else if (false) {}
       }
     } else if (isPlainObject(props)) {
       for (var key in props) {
@@ -1296,7 +1434,7 @@
     child,
     vm
   ) {
-    if ("production" !== 'production') {}
+    if (false) {}
 
     if (typeof child === 'function') {
       child = child.options;
@@ -1354,7 +1492,7 @@
     if (hasOwn(assets, PascalCaseId)) { return assets[PascalCaseId] }
     // fallback to prototype chain
     var res = assets[id] || assets[camelizedId] || assets[PascalCaseId];
-    if ("production" !== 'production' && warnMissing && !res) {}
+    if (false) {}
     return res
   }
 
@@ -1387,7 +1525,7 @@
       observe(value);
       observerState.shouldConvert = prevShouldConvert;
     }
-    if ("production" !== 'production') {}
+    if (false) {}
     return value
   }
 
@@ -1401,7 +1539,7 @@
     }
     var def = prop.default;
     // warn against non-factory defaults for Object & Array
-    if ("production" !== 'production' && isObject(def)) {}
+    if (false) {}
     // the raw prop value was also undefined from previous render,
     // return previous default value to avoid unnecessary watcher trigger
     if (vm && vm.$options.propsData &&
@@ -1646,7 +1784,7 @@
     if (isDef(attrs) || isDef(props)) {
       for (var key in propOptions) {
         var altKey = hyphenate(key);
-        if ("production" !== 'production') {}
+        if (false) {}
         checkProp(res, props, key, altKey, true) ||
         checkProp(res, attrs, key, altKey, false);
       }
@@ -1987,7 +2125,7 @@
 
     Vue.prototype.$emit = function (event) {
       var vm = this;
-      if ("production" !== 'production') {}
+      if (false) {}
       var cbs = vm._events[event];
       if (cbs) {
         cbs = cbs.length > 1 ? toArray(cbs) : cbs;
@@ -2185,13 +2323,13 @@
     vm.$el = el;
     if (!vm.$options.render) {
       vm.$options.render = createEmptyVNode;
-      if ("production" !== 'production') {}
+      if (false) {}
     }
     callHook(vm, 'beforeMount');
 
     var updateComponent;
     /* istanbul ignore if */
-    if ("production" !== 'production' && config.performance && mark) {} else {
+    if (false) {} else {
       updateComponent = function () {
         vm._update(vm._render(), hydrating);
       };
@@ -2235,7 +2373,7 @@
     // update props
     if (propsData && vm.$options.props) {
       observerState.shouldConvert = false;
-      if ("production" !== 'production') {}
+      if (false) {}
       var props = vm._props;
       var propKeys = vm.$options._propKeys || [];
       for (var i = 0; i < propKeys.length; i++) {
@@ -2243,7 +2381,7 @@
         props[key] = validateProp(key, vm.$options.props, propsData, vm);
       }
       observerState.shouldConvert = true;
-      if ("production" !== 'production') {}
+      if (false) {}
       // keep a copy of raw propsData
       vm.$options.propsData = propsData;
     }
@@ -2330,7 +2468,7 @@
   function resetSchedulerState () {
     index = queue.length = activatedChildren.length = 0;
     has = {};
-    if ("production" !== 'production') {}
+    if (false) {}
     waiting = flushing = false;
   }
 
@@ -2359,7 +2497,7 @@
       has[id] = null;
       watcher.run();
       // in dev build, check and stop circular updates.
-      if ("production" !== 'production' && has[id] != null) {}
+      if (false) {}
     }
 
     // keep copies of post queues before resetting state
@@ -2722,7 +2860,7 @@
       keys.push(key);
       var value = validateProp(key, propsOptions, propsData, vm);
       /* istanbul ignore else */
-      if ("production" !== 'production') {} else {
+      if (false) {} else {
         defineReactive$$1(props, key, value);
       }
       // static props are already proxied on the component's prototype
@@ -2786,7 +2924,7 @@
     for (var key in computed) {
       var userDef = computed[key];
       var getter = typeof userDef === 'function' ? userDef : userDef.get;
-      if ("production" !== 'production') {}
+      if (false) {}
       // create internal watcher for the computed property.
       watchers[key] = new Watcher(vm, getter, noop, computedWatcherOptions);
 
@@ -2795,7 +2933,7 @@
       // at instantiation here.
       if (!(key in vm)) {
         defineComputed(vm, key, userDef);
-      } else if ("production" !== 'production') {}
+      } else if (false) {}
     }
   }
 
@@ -2835,7 +2973,7 @@
     var props = vm.$options.props;
     for (var key in methods) {
       vm[key] = methods[key] == null ? noop : bind(methods[key], vm);
-      if ("production" !== 'production') {}
+      if (false) {}
     }
   }
 
@@ -2872,7 +3010,7 @@
     dataDef.get = function () { return this._data };
     var propsDef = {};
     propsDef.get = function () { return this._props };
-    if ("production" !== 'production') {}
+    if (false) {}
     Object.defineProperty(Vue.prototype, '$data', dataDef);
     Object.defineProperty(Vue.prototype, '$props', propsDef);
 
@@ -2913,7 +3051,7 @@
     if (result) {
       Object.keys(result).forEach(function (key) {
         /* istanbul ignore else */
-        if ("production" !== 'production') {} else {
+        if (false) {} else {
           defineReactive$$1(vm, key, result[key]);
         }
       });
@@ -3089,7 +3227,7 @@
     // if at this stage it's not a constructor or an async component factory,
     // reject.
     if (typeof Ctor !== 'function') {
-      if ("production" !== 'production') {}
+      if (false) {}
       return
     }
 
@@ -3562,13 +3700,13 @@
         // return error render result,
         // or previous vnode to prevent render error causing blank component
         /* istanbul ignore else */
-        if ("production" !== 'production') {} else {
+        if (false) {} else {
           vnode = vm._vnode;
         }
       }
       // return empty vnode in case the render function errored out
       if (!(vnode instanceof VNode)) {
-        if ("production" !== 'production' && Array.isArray(vnode)) {}
+        if (false) {}
         vnode = createEmptyVNode();
       }
       // set parent
@@ -3607,7 +3745,7 @@
 
       var startTag, endTag;
       /* istanbul ignore if */
-      if ("production" !== 'production' && config.performance && mark) {}
+      if (false) {}
 
       // a flag to avoid this being observed
       vm._isVue = true;
@@ -3625,7 +3763,7 @@
         );
       }
       /* istanbul ignore else */
-      if ("production" !== 'production') {} else {
+      if (false) {} else {
         vm._renderProxy = vm;
       }
       // expose real self
@@ -3640,7 +3778,7 @@
       callHook(vm, 'created');
 
       /* istanbul ignore if */
-      if ("production" !== 'production' && config.performance && mark) {}
+      if (false) {}
 
       if (vm.$options.el) {
         vm.$mount(vm.$options.el);
@@ -3723,8 +3861,7 @@
   }
 
   function Vue$3 (options) {
-    if ("production" !== 'production' &&
-      !(this instanceof Vue$3)
+    if (false
     ) {}
     this._init(options);
   }
@@ -3789,7 +3926,7 @@
       }
 
       var name = extendOptions.name || Super.options.name;
-      if ("production" !== 'production') {}
+      if (false) {}
 
       var Sub = function VueComponent (options) {
         this._init(options);
@@ -3870,7 +4007,7 @@
           return this.options[type + 's'][id]
         } else {
           /* istanbul ignore if */
-          if ("production" !== 'production') {}
+          if (false) {}
           if (type === 'component' && isPlainObject(definition)) {
             definition.name = definition.name || id;
             definition = this.options._base.extend(definition);
@@ -3992,7 +4129,7 @@
     // config
     var configDef = {};
     configDef.get = function () { return config; };
-    if ("production" !== 'production') {}
+    if (false) {}
     Object.defineProperty(Vue, 'config', configDef);
 
     // exposed util methods.
@@ -4462,7 +4599,7 @@
       var children = vnode.children;
       var tag = vnode.tag;
       if (isDef(tag)) {
-        if ("production" !== 'production') {}
+        if (false) {}
         vnode.elm = vnode.ns
           ? nodeOps.createElementNS(vnode.ns, tag)
           : nodeOps.createElement(tag, vnode);
@@ -4477,7 +4614,7 @@
           insert(parentElm, vnode.elm, refElm);
         }
 
-        if ("production" !== 'production' && data && data.pre) {}
+        if (false) {}
       } else if (isTrue(vnode.isComment)) {
         vnode.elm = nodeOps.createComment(vnode.text);
         insert(parentElm, vnode.elm, refElm);
@@ -4719,7 +4856,7 @@
           } else {
             elmToMove = oldCh[idxInOld];
             /* istanbul ignore if */
-            if ("production" !== 'production' && !elmToMove) {}
+            if (false) {}
             if (sameVnode(elmToMove, newStartVnode)) {
               patchVnode(elmToMove, newStartVnode, insertedVnodeQueue);
               oldCh[idxInOld] = undefined;
@@ -4808,7 +4945,7 @@
 
     // Note: this is a browser-only function so we can assume elms are DOM nodes.
     function hydrate (elm, vnode, insertedVnodeQueue) {
-      if ("production" !== 'production') {}
+      if (false) {}
       vnode.elm = elm;
       var tag = vnode.tag;
       var data = vnode.data;
@@ -4839,9 +4976,7 @@
             // if childNode is not null, it means the actual childNodes list is
             // longer than the virtual children list.
             if (!childrenMatch || childNode) {
-              if ("production" !== 'production' &&
-                typeof console !== 'undefined' &&
-                !bailed
+              if (false
               ) {}
               return false
             }
@@ -4903,7 +5038,7 @@
               if (hydrate(oldVnode, vnode, insertedVnodeQueue)) {
                 invokeInsertHook(vnode, insertedVnodeQueue, true);
                 return oldVnode
-              } else if ("production" !== 'production') {}
+              } else if (false) {}
             }
             // either not server-rendered, or hydration failed.
             // create an empty node and replace it
@@ -5814,7 +5949,7 @@
         : duration
     );
 
-    if ("production" !== 'production' && explicitEnterDuration != null) {}
+    if (false) {}
 
     var expectsCSS = css !== false && !isIE9;
     var userWantsControl = getHookArgumentsLength(enterHook);
@@ -5918,7 +6053,7 @@
         : duration
     );
 
-    if ("production" !== 'production' && isDef(explicitLeaveDuration)) {}
+    if (false) {}
 
     var cb = el._leaveCb = once(function () {
       if (el.parentNode && el.parentNode._pending) {
@@ -6329,13 +6464,12 @@
       }
 
       // warn multiple elements
-      if ("production" !== 'production' && children.length > 1) {}
+      if (false) {}
 
       var mode = this.mode;
 
       // warn invalid mode
-      if ("production" !== 'production' &&
-        mode && mode !== 'in-out' && mode !== 'out-in'
+      if (false
       ) {}
 
       var rawChild = children[0];
@@ -6442,7 +6576,7 @@
             children.push(c);
             map[c.key] = c
             ;(c.data || (c.data = {})).transition = transitionData;
-          } else if ("production" !== 'production') {}
+          } else if (false) {}
         }
       }
 
@@ -6603,11 +6737,9 @@
     if (config.devtools) {
       if (devtools) {
         devtools.emit('init', Vue$3);
-      } else if ("production" !== 'production' && isChrome) {}
+      } else if (false) {}
     }
-    if ("production" !== 'production' &&
-      config.productionTip !== false &&
-      inBrowser && typeof console !== 'undefined'
+    if (false
     ) {}
   }, 0);
 
@@ -6655,7 +6787,7 @@
 
   LimitedLinksGenerator.prototype._currentChunkIndex = function _currentChunkIndex () {
     var currentChunk = Math.floor(this.currentPage / this.limit)
-    return currentChunk * this.limit
+    return currentChunk * this.limit 
   };
 
   LimitedLinksGenerator.prototype._allPagesButLast = function _allPagesButLast () {
@@ -6872,7 +7004,7 @@
       )
       // If the link is a number,
       // then incremented by 1 (since it's 0 based).
-      // otherwise, do nothing (so, it's a symbol).
+      // otherwise, do nothing (so, it's a symbol). 
       var text = Number.isInteger(link) ? link + 1 : link
       return h('li', { class: liClasses }, [h('a', data, text)])
     })
@@ -7048,3 +7180,34 @@
   return vuePaginate;
 
 }));
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ })
+/******/ ]);

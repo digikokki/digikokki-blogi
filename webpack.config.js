@@ -1,39 +1,50 @@
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var extractPlugin = new ExtractTextPlugin({
-	filename: 'main.css'
-});
+var CleanWebpackPlugin = require('clean-webpack-plugin');
+var webpack = require('webpack');
 
 var webpackConfig = {
 	entry: "./_src/js/app.js",
 	output: {
-		path: path.resolve(__dirname, 'dist'),
-		publicPath: '/dist',
-		filename: "bundle.js"
+		path: path.resolve(__dirname, 'web'),
+		publicPath: '/web',
+		filename: "js/bundle.js"
 	},
 	module: {
 		rules: [
-		    {
-	        test: /\.js$/,
-	        use: [
-	            {
-	                loader: 'babel-loader',
-	                options: {
-	                    presets: ['es2015']
-	                }
-	            }
-	        ]
-		    },
-		    {
-	        test: /\.scss$/,
-	        use: extractPlugin.extract({
-	            use: ['css-loader', 'sass-loader']
-	        })
-		    },
-		],
+			{
+				test:[/\.js$/],
+				use: 'babel-loader',
+			},
+			{
+          test: /\.scss/,
+          enforce: "pre",
+          loader: 'import-glob-loader'
+ 			},
+			{
+        test: [ /\.scss$/, /\.css$/, ],
+        exclude: /node_modules/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            { loader: 'css-loader' },
+            { loader: 'sass-loader' }
+          ], }),
+      },
+			{
+			  test: /\.(png|jpg|jpeg|gif|svg|eot|ttf|woff|woff2|otf)$/,
+			  use:  [
+					{ loader:'file-loader',
+						options: {
+							context: '_src/img'
+						}
+					}
+				]
+			},
+    ],
 	},
-	plugins:[
-		extractPlugin
+	plugins: [
+		new ExtractTextPlugin({ filename: getPath => getPath('css/[name].min.css').replace('css/js', 'css'), allChunks: true, })
 	]
 };
 

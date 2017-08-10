@@ -1,5 +1,7 @@
   import '../scss/main.scss';
   import VuePaginate from 'vue-paginate'
+
+
   Vue.use(VuePaginate)
 
   console.log('Hello Vue and Webpack!!');

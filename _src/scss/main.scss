@@ -29,8 +29,8 @@ $javascript: 			#f7df1e !default;
 	color: $javascript;
 }
 
-
-@import "_src/scss/vendor/_fonts.scss";
+@import "vendor/**/*";
+@import "includes/**/*";
 
 
 //Base

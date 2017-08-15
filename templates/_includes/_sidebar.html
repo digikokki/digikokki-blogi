@@ -10,23 +10,7 @@
   </div>
   <div id="videoContainer">
     <div id="videoContent">
-      <div id="youtubelist">
-          <input type="search" placeholder="Etsi videota" v-model="searchkeyword">
-          <paginate id="videoLinks" name="filteredlist" class="paginate-list" :list="filteredlist" :per="4">
-      			<li v-for="youtubeLink in paginated('filteredlist')">
-              <div class="videoThumbnail">
-                <a href="#">
-                <img v-bind:src="youtubeLink.image" lass="img-fluid"  alt="youtubeLink.title" />
-                </a>
-              </div>
-              <div class="videoInfo">
-                <a v-bind:href="youtubeLink.link" target="_blank"><h4>${ youtubeLink.title }</h4></a>
-                <h6><a href="#">#${youtubeLink.category}</a> &middot; <span>Julkaistu: ${youtubeLink.date_published}</span></h6>
-              </div>
-            </li>
-          </paginate>
-          <paginate-links for="filteredlist" :simple="{next: 'Seuraavat »',prev: '« Edelliset'}"></paginate-links>
-    	</div>
+      <div id="youtubelist"></div>
     </div>
   </div>
 </div>

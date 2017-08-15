@@ -12,28 +12,23 @@
   {% endif %}
 
   <p class="time">Julkaistu: <time>{{ entry.postDate | date("m.d.Y") }}</time> · 3 kommenttia</p>
-
-  <social-sharing inline-template>
-    <div class="social-sharing">
-      <network network="facebook">
-        <i class="fa fa-fw fa-facebook"></i>
-      </network>
-      <network network="linkedin">
-        <i class="fa fa-fw fa-linkedin"></i>
-      </network>
-      <network network="slack">
-        <i class="fa fa-fw fa-slack"></i>
-      </network>
-      <network network="twitter">
-        <i class="fa fa-fw fa-twitter"></i>
-      </network>
-      <network network="whatsapp">
-        <i class="fa fa-fw fa-whatsapp"></i>
-      </network>
-      <network network="email">
-        <i class="fa fa-fw fa-envelope"></i>
-      </network>
-    </div>
+  <social-sharing url="https://vuejs.org/"
+      title="The Progressive JavaScript Framework"
+      description="Intuitive, Fast and Composable MVVM for building interactive interfaces."
+      quote="Vue is a progressive framework for building user interfaces."
+      hashtags="vuejs,javascript,framework"
+      twitter-user="vuejs"
+      v-cloak inline-template>
+  <div class="social-sharing">
+  <network network="facebook" id="facebook">
+  <i class="fa fa-fw fa-facebook"></i>
+  </network>
+  <network network="linkedin" id="linkedin">
+  <i class="fa fa-fw fa-linkedin"></i>
+  </network>
+  <network network="twitter" id="twitter">
+  <i class="fa fa-fw fa-twitter"></i>
+  </network>
+  </div>
   </social-sharing>
-
 </header>

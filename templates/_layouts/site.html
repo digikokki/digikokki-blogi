@@ -14,16 +14,17 @@
 {% block body %}
 
   {% include "_includes/_top-bar.html" %}
+  <div id="app">
   <main id="siteContainer">
     <div id="pageContent">
       {% block main %}{% endblock %}
     </div>
     <nav id="pageNav">
-        {% include "_includes/_nav.html" %}
+      {% include "_includes/_nav.html" %}
     </nav>
     <aside id="pageSidebar">
       {% include "_includes/_sidebar.html" %}
     </aside>
   </main>
-
+  </div>
 {% endblock %}

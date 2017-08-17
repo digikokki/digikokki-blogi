@@ -42,13 +42,15 @@ module.exports = {
       {
         test: [ /\.scss$/, /\.css$/, ],
         exclude: /node_modules/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+        /*
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [
-            { loader: 'css-loader' },
-            { loader: 'sass-loader' }
-          ], }),
-      },
+          use: ['css-loader', 'sass-loader'],
+          publicPath: '/web'
+        }),
+        */
+      }
     ]
   },
   resolve: {
@@ -57,6 +59,8 @@ module.exports = {
     }
   },
   devServer: {
+    contentBase: path.join(__dirname, 'web'),
+    hot: true,
     historyApiFallback: true,
     noInfo: true
   },
@@ -65,9 +69,16 @@ module.exports = {
   },
   devtool: '#eval-source-map',
   plugins: [
-  	new ExtractTextPlugin({ filename: getPath => getPath('css/[name].min.css').replace('css/js', 'css'), allChunks: true, })
+  	new ExtractTextPlugin({
+      filename: getPath => getPath('css/[name].min.css'),
+      allChunks: true,
+      disable: true,
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin()
   ]
 }
+
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'

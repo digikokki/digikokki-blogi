@@ -20,6 +20,12 @@ const webpackDevelopmentConfig = {
     // Enable any "source-map"-like devtool if possible
     devtool: "source-map",
 
+    resolve: {
+      alias: {
+        'vue$': 'vue/dist/vue.esm.js'
+      }
+    },
+
     // Plugins => Configure webpack plugins
     plugins: [
       new ExtractTextPlugin({

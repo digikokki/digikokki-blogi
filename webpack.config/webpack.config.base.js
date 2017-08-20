@@ -109,7 +109,7 @@ const webpackBaseConfig = function(env) {
               filename: '../templates/_layouts/base.html',
             }),
 
-            new WebpackNotifierPlugin({alwaysNotify: true}),
+            new WebpackNotifierPlugin({alwaysNotify: false}),
 
         ]
     }

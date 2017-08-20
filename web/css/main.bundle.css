@@ -35,7 +35,7 @@
     .articleListContent header .social-sharing, .articleSingleContent header .social-sharing {
       margin-top: 32px; }
       .articleListContent header .social-sharing i, .articleSingleContent header .social-sharing i {
-        font-size: 13px;
+        font-size: 16px;
         color: #3F72AF; }
   .articleListContent main, .articleSingleContent main {
     display: flex;

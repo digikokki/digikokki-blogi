@@ -25,10 +25,7 @@ const webpackBaseConfig = function(env) {
 
         // Location of the index.js file
         // Where Webpack's begins it module compilation process
-        entry: {
-          // File containing our custom code
-          global: "./_src/js/app.js"
-        },
+        entry: "./_src/js/app.js",
 
         // Newly compiled file configuration
         output: {
@@ -41,7 +38,7 @@ const webpackBaseConfig = function(env) {
           filename: "[name].config.base.js",
 
           // Path webpack will reference for looking for public files. Important for dynamic codesplitting
-          publicPath: "/web/"
+          publicPath: ""
 
         },
 
@@ -100,7 +97,7 @@ const webpackBaseConfig = function(env) {
 
             // Will remove duplicate modules that exist due to "Code Splitting" to only include once within the specified bundle "names".
             new webpack.optimize.CommonsChunkPlugin({
-              names: ['vendor', 'manifest'],
+              names: [],
               minChunks: Infinity
               // minChunks ensures that no other module goes into the vendor chunk
             }),

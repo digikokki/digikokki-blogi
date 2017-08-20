@@ -563,7 +563,7 @@ footer {
             height: 24px;
             background: red;
             z-index: 10;
-            background: url(/web/play-icon.svg?44981f2e4de62b6831a8c2501ff76c7d);
+            background: url(play-icon.svg?44981f2e4de62b6831a8c2501ff76c7d);
             opacity: 0.9; }
       #videoContainer #videoContent #videoLinks li .videoInfo h4 {
         font-size: 0.9em;
@@ -703,4 +703,4 @@ body {
 :root {
   --color-primary: #3F72AF; }
 
-/*# sourceMappingURL=global.bundle.css.map*/
+/*# sourceMappingURL=main.bundle.css.map*/

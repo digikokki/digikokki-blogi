@@ -9,7 +9,7 @@ import prism from 'prismjs';
 window.axios = axios;
 window.Vue = Vue;
 
-console.log('Hello Vue and Webpack and Loader web server');
+console.log('Hello Vue and Webpack and Loader web server!');
 
 var desktopOnly = window.matchMedia( "(min-width: 1024px)" );
 

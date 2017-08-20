@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta10/shoelace.css">
     <script src="https://use.fontawesome.com/9f1ccc6a33.js"></script>
     {{ getHeadHtml() }}
-  <link href="{{ siteUrl }}css/main.bundle.css" rel="stylesheet"></head>
+    <link href="{{ siteUrl }}css/main.bundle.css" rel="stylesheet"></head>
+    <link rel="stylesheet" href="{{ siteUrl }}bower_components/prism/themes/prism-okaidia.css">
 <body id="siteWrapper" {% if bodyClass is defined %}class="{{ bodyClass }}"{% endif %}>
   {% block body %}{% endblock %}
 	{% block foot %}{% endblock %}

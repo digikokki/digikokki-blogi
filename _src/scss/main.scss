@@ -1,16 +1,12 @@
 @charset 'utf-8';
 
 // Varialbes
-$whiteText        : #e5e5e5;
-$blackText        : #222;
+
+
 $brandColorLight  : #3F72AF;
 $brandColorDark   : #065b9f;
-$brandColorActive : #6EC4E9;
-
-$whiteText: #e5e5e5;
-$blackText: #3A3A3A;
+$brandColorActive : #0151A4;
 $lightBlackText: #606060;
-$brandColorActive: #6EC4E9;
 $lightText: #EDEDED;
 
 $html5: 					#f16529 !default;
@@ -36,6 +32,8 @@ $javascript: 			#f7df1e !default;
 // inject:vendor
 @import "_src/scss/vendor/_fonts.scss";
 @import "_src/scss/vendor/_media-queries.scss";
+@import "_src/scss/vendor/_shoelace.scss";
+@import "_src/scss/vendor/_prism-okaidia.scss";
 
 // inject:app
 @import "_src/scss/includes/_article.scss";

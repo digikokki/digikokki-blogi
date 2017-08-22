@@ -1,7 +1,7 @@
 //MobileFirst
 #pageNav{
   @include font("Montserrat");
-  background-color: #005189;
+  background-color: $brandColorDark;
   transition: .2s ease-out all;
   transform: translateX(0%);
   z-index: 100;
@@ -54,11 +54,11 @@
       .siteLinkList{
         margin: 0px 30px;
         padding: 10px;
-        border-top: solid 1px $brandColorDark;
+        border-top: solid 1px #004A97;
       }
       #pageLinks{
-        border-top: solid 1px $brandColorDark;
-        border-bottom: solid 1px $brandColorDark;
+        border-top: solid 1px $brandColorActive;
+        border-bottom: solid 1px $brandColorActive;
         a{
           color: white;
           span{
@@ -126,7 +126,7 @@
         margin: 20px 0px;
         margin-top: 5px;
         padding: 20px 0px 0px 0px;
-        border-top: solid 1px $brandColorDark;
+        border-top: solid 1px $brandColorActive;
         a{
           text-transform: uppercase;
         }

@@ -38,7 +38,7 @@ const webpackBaseConfig = function(env) {
           filename: "[name].config.base.js",
 
           // Path webpack will reference for looking for public files. Important for dynamic codesplitting
-          publicPath: ""
+          publicPath: "/"
 
         },
 

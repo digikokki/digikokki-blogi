@@ -4,33 +4,39 @@
 <div id="articleContainerList">
   {% for entry in entries %}
   <article class="articleListContent">
-    {% include "_includes/_article-header.html" with {'currentNav':'homePage'} %}
+
     <section>
       <main class="articleListing">
-        <div class="articleContent">
-          <h2>{{entry.subTitle}}</h2>
-          {% set paragraphs = entry.body|split('</p>') %}
-          {% set teaser = paragraphs|first ~ '</p>' %}
-          {{ teaser | slice(0,200) | raw   }}
-          <a href="#">Lue koko artikkeli</a>
-        </div>
         {% if entry.featuredImage | length %}
         <div class="articleCoverImage">
           <a href="{{ entry.url }}">
-            {% if entry.featuredImage | length %}
-              {% set featuredImage = "" %}
-              {% set img_transform = {
-                mode: 'fit',
-                width: 600
-              } %}
-              {% for asset in entry.featuredImage %}
-                {% set featuredImage = asset.getUrl(img_transform) %}
-              {% endfor %}
-              <!--img class="img-fluid" src="{{featuredImage}}" alt="{{entry.title}}"-->
-            {% endif %}
-          </a>
+           {% if entry.featuredImage | length %}
+             {% set featuredImage = "" %}
+             {% set img_transform = {
+               mode: 'fit',
+               width: 600
+             } %}
+             {% for asset in entry.featuredImage %}
+               {% set featuredImage = asset.getUrl(img_transform) %}
+             {% endfor %}
+             <div class="image-container">
+               <figure class="cover-image">
+                  <img img class="img-fluid" src="{{featuredImage}}" alt="{{entry.title}}">
+                </figure>
+             </div>
+           {% endif %}
+         </a>
         </div>
         {% endif %}
+        <div class="articleContent">
+          {% include "_includes/_article-header.html" with {'currentNav':'homePage'} %}
+          {% set paragraphs = entry.body|split('</p>') %}
+          {% set teaser = paragraphs|first ~ '</p>' %}
+          {{ teaser | slice(0,200) | raw   }}
+          <div class="readMore">
+            <a href="#">Lue lisää</a>
+          </div>
+        </div>
       </main>
     </section>
   </article>

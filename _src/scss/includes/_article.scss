@@ -1,6 +1,9 @@
 // MobileFist
 .articleListContent, .articleSingleContent{
   position: relative;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
   margin-bottom: 110px;
   padding-bottom: 70px;
   margin: 0 auto;
@@ -9,6 +12,7 @@
     margin-bottom: 24px;
     h6{
       text-transform: uppercase;
+      color: #EDEDED;
     }
     h1{
       margin-top: 5px;
@@ -27,7 +31,7 @@
       }
     }
     .social-sharing{
-      margin-top: 32px;
+      margin-top: 16px;
       i{
         font-size: 16px;
         color: $brandColorLight;
@@ -37,11 +41,24 @@
 
   main{
     display: flex;
-    flex-direction: column;
     margin-top: 32px;
     .articleCoverImage{
-      order: 1;
       flex: 0 0 200px;
+      .image-container{
+        padding-bottom: 100%;
+        position: relative;
+        figure {
+           position: absolute;
+           width: 100%;
+           height: 100%;
+           margin: 0;
+           img {
+              object-fit: cover;
+              width: 100%;
+              height: 100%;
+          }
+        }
+      }
     }
   }
 
@@ -100,6 +117,38 @@
 
     }
   }
+  .articleTags{
+    ul{
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    li{
+      list-style: none;
+      margin-right: 16px;
+    }
+  }
+}
+
+.articleListContent{
+  header{
+    margin-bottom: 10px;
+  }
+  p{
+    @include font("Montserrat", 300);
+    //font-size: 0.85em;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+    margin: 0px 0px;
+    color: #666666;
+    strong{
+      @include font("Montserrat", 500);
+      color: #444444;
+    }
+  }
+  .readMore{
+    margin-top: 10px;
+  }
 }
 
 //Desktop
@@ -107,12 +156,13 @@
   .articleListContent{
     main{
       display: flex;
-      flex-direction: row;
       .articleContent{
-        flex: 0 0 80%;
+        display: flex;
+        flex-direction: column;
       }
       .articleCoverImage{
-        order: 1;
+        flex: 1 0 200px;
+        margin-right: 20px;
       }
     }
   }

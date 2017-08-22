@@ -1,5 +1,4 @@
 <header>
-
   {% set categories = craft.categories.relatedTo(entry).level(1).limit(1) %}
   {% for category in categories %}
   <a href="{{ category.url }}"><h6>#{{ category.title }}</h6></a>
@@ -12,6 +11,8 @@
   {% endif %}
 
   <p class="time">Julkaistu: <time>{{ entry.postDate | date("m.d.Y") }}</time> · 3 kommenttia</p>
+  {% if currentNav == "homePage" %}
+  {% else %}
   <social-sharing url="https://vuejs.org/"
   title="The Progressive JavaScript Framework"
   description="Intuitive, Fast and Composable MVVM for building interactive interfaces."
@@ -23,12 +24,15 @@
       <network network="facebook" id="facebook">
         <i class="fa fa-fw fa-facebook"></i>
       </network>
-      <network network="linkedin" id="linkedin">
-        <i class="fa fa-fw fa-linkedin"></i>
-      </network>
       <network network="twitter" id="twitter">
         <i class="fa fa-fw fa-twitter"></i>
       </network>
+      <network network="linkedin" id="linkedin">
+        <i class="fa fa-fw fa-linkedin"></i>
+      </network>
+      <span><i class="fa fa-fw fa-slack"></i></span>
+      <span><i class="fa fa-fw fa-envelope"></i></span>
     </div>
   </social-sharing>
+  {% endif %}
 </header>

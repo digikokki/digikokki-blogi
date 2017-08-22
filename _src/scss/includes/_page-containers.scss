@@ -19,8 +19,6 @@
   display: block;
 }
 
-
-
 //Desktop
 @include respond-to($desktop) {
   #siteContainer{
@@ -53,7 +51,7 @@
   }
 
   #pageSidebar{
-    flex: 0 0 400px;
+    flex: 0 0 320px;
 		min-width: 0;
   }
 	.homepage{

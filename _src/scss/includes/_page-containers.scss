@@ -24,12 +24,10 @@
   #siteContainer{
   	flex-direction: row;
   }
-
 	#pageContent{
     flex: 1;
 		margin: 0em;
   }
-
 	#pageHeading{
 		padding-left: 70px;
 		width: 100%;
@@ -37,23 +35,6 @@
 		background-size: cover !important;
 		background-position: center center !important;
 	}
-
-	#pageBody{
-		max-width: 920px;
-    padding: 0 2em;
-    margin: 0 auto;
-		margin-top: 4em;
-    padding-left: 120px;
-	}
-
-  #pageNav{
-    flex: 0 0 70px;
-  }
-
-  #pageSidebar{
-    flex: 0 0 320px;
-		min-width: 0;
-  }
 	.homepage{
 		#pageBody{
 			margin-top: 100px;

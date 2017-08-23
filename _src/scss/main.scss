@@ -70,13 +70,56 @@ body{
   --color-primary: $brandColorLight;
 }
 
+.newsLetter{
+	display: flex;
+	align-items: center;
+	label{}
+	input{
+		width: 120px;
+		height: 35px;
+	}
+	button{}
+}
 
+input{
+	width: 100%;
+	border: none;
+	margin-bottom: 20px;
+	padding: 20px 10px;
+	color: #3A3A3A;
+	@include font("Montserrat", 400);
+	background: #E8EEF7;
+	transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+	&:focus{
+		background: white;
+	}
+}
 
 //Typography
 
 
 //DesktopFirst
 @include respond-to($desktop) {
+	.pageLeftBlock{
+	  flex: 0 0 70px;
+	  position: fixed;
+	  width: 70px;
+	}
+	.pageCenterBlock{
+	  flex: 1;
+	  margin: 0em;
+	}
+	.pageRightBlock{
+	  flex: 0 0 320px;
+	  min-width: 0;
+	}
+
+	.pageCenterBlockContainer{
+	  max-width: 920px;
+	  padding: 0 2em;
+	  margin: 0 auto;
+	  padding-left: 120px;
+	}
 }
 
 //LaptopFirst

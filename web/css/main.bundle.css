@@ -2103,17 +2103,6 @@ footer {
     height: 400px;
     background-size: cover !important;
     background-position: center center !important; }
-  #pageBody {
-    max-width: 920px;
-    padding: 0 2em;
-    margin: 0 auto;
-    margin-top: 4em;
-    padding-left: 120px; }
-  #pageNav {
-    flex: 0 0 70px; }
-  #pageSidebar {
-    flex: 0 0 320px;
-    min-width: 0; }
   .homepage #pageBody {
     margin-top: 100px; } }
 
@@ -2377,9 +2366,10 @@ footer {
 
 @media only screen and (min-width: 1024px) {
   #topBar {
-    display: block;
+    display: flex;
     position: fixed;
     width: 100%;
+    height: 60px;
     border-bottom: 1px solid #F3F3F3;
     background: white;
     z-index: 90; }
@@ -2388,28 +2378,37 @@ footer {
       font-family: "Montserrat";
       font-weight: 800;
       font-style: normal;
-      text-transform: uppercase;
-      padding: 18px 0px; } }
+      text-transform: uppercase; }
+  #topBarContainer {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: row; } }
 
-.sideBySideContainer {
+/*
+.sideBySideContainer{
   display: flex;
   flex: 1 0 auto;
-  flex-direction: row; }
-  .sideBySideContainer .sideBySideItem:nth-child(1) {
-    box-sizing: border-box;
-    flex: 0 0 70px;
-    position: fixed;
-    width: 70px;
-    justify-content: flex-start; }
-  .sideBySideContainer .sideBySideItem:nth-child(2) {
-    flex: 1;
-    max-width: 920px;
-    padding: 0 2em;
-    margin: 0 auto;
-    padding-left: 120px; }
-  .sideBySideContainer .sideBySideItem:nth-child(3) {
-    flex: 0 0 400px; }
-
+  flex-direction: row;
+  .sideBySideItem{
+    &:nth-child(1){
+      box-sizing: border-box;
+      flex: 0 0 70px;
+      position: fixed;
+      width: 70px;
+      justify-content: flex-start;
+    }
+    &:nth-child(2){
+      flex: 1;
+      max-width: 920px;
+      padding: 0 2em;
+      margin: 0 auto;
+    }
+    &:nth-child(3){
+      flex: 0 0 400px;
+    }
+  }
+}
+*/
 * {
   box-sizing: border-box; }
 
@@ -2428,5 +2427,43 @@ body {
 
 :root {
   --color-primary: #3F72AF; }
+
+.newsLetter {
+  display: flex;
+  align-items: center; }
+  .newsLetter input {
+    width: 120px;
+    height: 35px; }
+
+input {
+  width: 100%;
+  border: none;
+  margin-bottom: 20px;
+  padding: 20px 10px;
+  color: #3A3A3A;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-style: normal;
+  background: #E8EEF7;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
+  input:focus {
+    background: white; }
+
+@media only screen and (min-width: 1024px) {
+  .pageLeftBlock {
+    flex: 0 0 70px;
+    position: fixed;
+    width: 70px; }
+  .pageCenterBlock {
+    flex: 1;
+    margin: 0em; }
+  .pageRightBlock {
+    flex: 0 0 320px;
+    min-width: 0; }
+  .pageCenterBlockContainer {
+    max-width: 920px;
+    padding: 0 2em;
+    margin: 0 auto;
+    padding-left: 120px; } }
 
 /*# sourceMappingURL=main.bundle.css.map*/

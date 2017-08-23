@@ -1883,7 +1883,15 @@ pre[class*="language-"] {
     line-height: 30px; }
 
 footer {
-  background: #000; }
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-style: normal;
+  padding: 5px 0px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 0.5em; }
+  footer span {
+    font-family: "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", Times, Symbola, Aegyptus, Code2000, Code2001, Code2002, Musica, serif, LastResort; }
 
 #fronPageRight h3 {
   font-family: "Montserrat";
@@ -1977,7 +1985,7 @@ footer {
     flex-direction: column;
     width: 100%;
     color: white;
-    transition: .2s ease-out all;
+    transition: 0.2s all bubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform: translateX(0%); }
     #pageNav #pageNavContent ul {
       margin: 0;
@@ -2382,33 +2390,13 @@ footer {
   #topBarContainer {
     display: flex;
     flex: 1 0 auto;
-    flex-direction: row; } }
+    flex-direction: row;
+    align-items: center; }
+  #topBarContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; } }
 
-/*
-.sideBySideContainer{
-  display: flex;
-  flex: 1 0 auto;
-  flex-direction: row;
-  .sideBySideItem{
-    &:nth-child(1){
-      box-sizing: border-box;
-      flex: 0 0 70px;
-      position: fixed;
-      width: 70px;
-      justify-content: flex-start;
-    }
-    &:nth-child(2){
-      flex: 1;
-      max-width: 920px;
-      padding: 0 2em;
-      margin: 0 auto;
-    }
-    &:nth-child(3){
-      flex: 0 0 400px;
-    }
-  }
-}
-*/
 * {
   box-sizing: border-box; }
 
@@ -2431,9 +2419,23 @@ body {
 .newsLetter {
   display: flex;
   align-items: center; }
+  .newsLetter label {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.8em;
+    margin-right: 8px; }
   .newsLetter input {
     width: 120px;
-    height: 35px; }
+    height: 29px !important;
+    padding: 0px 8px;
+    margin-right: 8px;
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.8em; }
+  .newsLetter button {
+    height: 29px !important; }
 
 input {
   width: 100%;

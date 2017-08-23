@@ -19882,6 +19882,10 @@ var _YoutubeVideoList = __webpack_require__(11);
 
 var _YoutubeVideoList2 = _interopRequireDefault(_YoutubeVideoList);
 
+var _PageNav = __webpack_require__(47);
+
+var _PageNav2 = _interopRequireDefault(_PageNav);
+
 var _vuePaginate = __webpack_require__(12);
 
 var _vuePaginate2 = _interopRequireDefault(_vuePaginate);
@@ -19901,19 +19905,6 @@ window.Vue = _vue2.default;
 
 console.log('Hello Vue and Webpack and Loader web server!');
 
-var desktopOnly = window.matchMedia("(min-width: 1024px)");
-
-// Add a listen event
-desktopOnly.addListener(mobileToDesktop);
-// Function to do something with the media query
-function mobileToDesktop(desktopOnly) {
-  if (desktopOnly.matches) {
-    document.getElementById('pageNavContent').classList.remove('open');
-  } else {}
-}
-// On load
-mobileToDesktop(desktopOnly);
-
 _vue2.default.use(_vuePaginate2.default);
 _vue2.default.use(_vueSocialSharing2.default);
 
@@ -19922,22 +19913,17 @@ new _vue2.default({
   data: {}
 });
 
-var toggleMobileNav = new _vue2.default({
-  el: '#pageNavContainer',
-  data: {
-    navOpen: false
-  },
-  methods: {
-    toggleClass: function toggleClass(data) {
-      data.navOpen = !this.navOpen;
-    }
-  }
-});
-
 new _vue2.default({
   el: '#youtubelist',
   render: function render(h) {
     return h(_YoutubeVideoList2.default);
+  }
+});
+
+new _vue2.default({
+  el: '#pageNavContainer',
+  render: function render(h) {
+    return h(_PageNav2.default);
   }
 });
 
@@ -20749,6 +20735,225 @@ module.exports = function listToStyles (parentId, list) {
   return styles
 }
 
+
+/***/ }),
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(51)
+}
+var Component = __webpack_require__(38)(
+  /* script */
+  __webpack_require__(48),
+  /* template */
+  __webpack_require__(50),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/digikokki/Documents/_code-stuff/_digikokki/Git-projektit/craft-3-cms/_src/PageNav.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] PageNav.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-59051576", Component.options)
+  } else {
+    hotAPI.reload("data-v-59051576", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+   value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+   data: function data() {
+      return {
+         navOpen: false
+      };
+   }
+};
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(35)();
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"PageNav.vue","sourceRoot":"webpack://"}]);
+
+// exports
+
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    attrs: {
+      "id": "pageNavContainer"
+    }
+  }, [_c('div', {
+    attrs: {
+      "id": "pageNavHeading"
+    }
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    attrs: {
+      "id": "mobileNav"
+    },
+    on: {
+      "click": function($event) {
+        _vm.navOpen = !_vm.navOpen
+      }
+    }
+  }, [_vm._v("\n      valikko\n    ")])]), _vm._v(" "), _c('div', {
+    class: {
+      open: _vm.navOpen
+    },
+    attrs: {
+      "id": "pageNavContent"
+    }
+  }, [_vm._m(1)])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    attrs: {
+      "id": "brandLogo"
+    }
+  }, [_c('a', {
+    attrs: {
+      "href": "/"
+    }
+  }, [_c('img', {
+    attrs: {
+      "src": "img/digikokki-logo-test.svg"
+    }
+  })])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('ul', {
+    staticClass: "siteLinkList",
+    attrs: {
+      "id": "pageLinks"
+    }
+  }, [_c('a', {
+    attrs: {
+      "href": "#"
+    }
+  }, [_c('li', [_c('i', {
+    staticClass: "fa fa-globe"
+  }), _vm._v(" "), _c('span', [_vm._v("Internet")])])]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "#"
+    }
+  }, [_c('li', [_c('i', {
+    staticClass: "fa fa-html5"
+  }), _vm._v(" "), _c('span', [_vm._v("Html")])])]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "#"
+    }
+  }, [_c('li', [_c('i', {
+    staticClass: "fa fa-css3"
+  }), _vm._v(" "), _c('span', [_vm._v("Css")])])]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "#"
+    }
+  }, [_c('li', [_c('i', {
+    staticClass: "fa fa-code"
+  }), _vm._v(" "), _c('span', [_vm._v("Javascript")])])]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "#"
+    }
+  }, [_c('li', [_c('i', {
+    staticClass: "fa fa-cogs"
+  }), _vm._v(" "), _c('span', [_vm._v("Koodarin työkalut")])])])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-59051576", module.exports)
+  }
+}
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(49);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(41)("4bd36644", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-59051576\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PageNav.vue", function() {
+     var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-59051576\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PageNav.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

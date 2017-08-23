@@ -1,3 +1,10 @@
 footer{
-  background: #000;
+  @include font("Montserrat", 400);
+  padding: 5px 0px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 0.5em;
+  span{
+        font-family: "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", Times, Symbola, Aegyptus, Code2000, Code2001, Code2002, Musica, serif, LastResort;
+  }
 }

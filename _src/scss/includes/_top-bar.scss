@@ -23,31 +23,11 @@
     display: flex;
     flex: 1 0 auto;
     flex-direction: row;
+    align-items: center;
+  }
+  #topBarContent{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
-
-/*
-.sideBySideContainer{
-  display: flex;
-  flex: 1 0 auto;
-  flex-direction: row;
-  .sideBySideItem{
-    &:nth-child(1){
-      box-sizing: border-box;
-      flex: 0 0 70px;
-      position: fixed;
-      width: 70px;
-      justify-content: flex-start;
-    }
-    &:nth-child(2){
-      flex: 1;
-      max-width: 920px;
-      padding: 0 2em;
-      margin: 0 auto;
-    }
-    &:nth-child(3){
-      flex: 0 0 400px;
-    }
-  }
-}
-*/

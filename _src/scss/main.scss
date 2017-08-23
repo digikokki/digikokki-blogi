@@ -73,12 +73,22 @@ body{
 .newsLetter{
 	display: flex;
 	align-items: center;
-	label{}
+	label{
+		@include font("Montserrat", 400);
+		font-size: 0.8em;
+		margin-right: 8px;
+	}
 	input{
 		width: 120px;
-		height: 35px;
+		height: 29px!important;
+		padding: 0px 8px;
+		margin-right: 8px;
+		@include font("Montserrat", 400);
+		font-size: 0.8em;
 	}
-	button{}
+	button{
+		height: 29px!important;
+	}
 }
 
 input{

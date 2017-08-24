@@ -7,13 +7,13 @@ const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
 const webpackProductionConfig = {
     // Newly compiled file configuration
     output: {
-      filename: "javascripts/[name].[chunkhash].bundle.min.js",
+      filename: "js/[name].bundle.js",
     },
 
     // Plugins => Configure webpack plugins
     plugins: [
       new ExtractTextPlugin({
-          filename: "stylesheets/[name].[contenthash].bundle.min.css"
+          filename: "css/[name].bundle.css"
       }),
       // Generator robots.txt
       new RobotstxtPlugin({

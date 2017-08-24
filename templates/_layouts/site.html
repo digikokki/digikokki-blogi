@@ -16,13 +16,13 @@
   {% include "_includes/_top-bar.html" %}
   <div id="app">
   <main id="siteContainer">
+    <nav id="pageNav" class="pageLeftBlock">
+      {% include "_includes/_nav.html" %}
+    </nav>
     <div id="pageContent" class="pageCenterBlock">
       {% block main %}{% endblock %}
       {% include "_includes/_footer.html" %}
     </div>
-    <nav id="pageNav" class="pageLeftBlock">
-      {% include "_includes/_nav.html" %}
-    </nav>
     <aside id="pageSidebar" class="pageRightBlock">
       {% include "_includes/_sidebar.html" %}
     </aside>

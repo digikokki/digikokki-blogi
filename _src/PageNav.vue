@@ -2,7 +2,7 @@
 <div id="pageNavContainer">
   <div id="pageNavHeading">
     <div id="brandLogo">
-      <a href="/"><img src="img/digikokki-logo-test.svg"/></a>
+      <a href="/"><img src="./img/digikokki-logo.svg"/></a>
     </div>
     <div id="mobileNav" @click="navOpen = !navOpen">
       valikko
@@ -22,6 +22,7 @@
 
 <script>
 export default {
+    delimiters: ['${', '}'],
     data () {
        return {
           navOpen: false

@@ -1,8 +1,10 @@
 # config valid only for current version of Capistrano
 lock "3.9.0"
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :application, "digikokki-blogi"
+set :repo_url, "https://github.com/digikokki/digikokki-blogi.git"
+set :deploy_to, "/var/www/craft"
+set :keep_releases, 2
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

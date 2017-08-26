@@ -3,6 +3,8 @@
  * Craft web bootstrap file
  */
 
+header('Access-Control-Allow-Origin: *');
+
 // Project root path
 $root = dirname(__DIR__);
 

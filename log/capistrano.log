@@ -78,3 +78,28 @@
   INFO [861454de] Running /usr/bin/env echo "Branch master (at b238e35c921e39965d3ee3f53057052bdf96fd87) deployed as release 20170826214919 by digikokki" >> /var/www/craft/revisions.log as root@146.185.169.225
  DEBUG [861454de] Command: cd /var/www/craft/releases && /usr/bin/env echo "Branch master (at b238e35c921e39965d3ee3f53057052bdf96fd87) deployed as release 20170826214919 by digikokki" >> /var/www/craft/revisions.log
   INFO [861454de] Finished in 0.065 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-08-27 00:59:51 +0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [0ceec42c] Running /usr/bin/env mkdir -p /tmp as root@146.185.169.225
+ DEBUG [0ceec42c] Command: /usr/bin/env mkdir -p /tmp
+  INFO [0ceec42c] Finished in 0.517 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-digikokki-blogi-production-digikokki.sh 0.0%
+  INFO Uploading /tmp/git-ssh-digikokki-blogi-production-digikokki.sh 100.0%
+  INFO [d605f14b] Running /usr/bin/env chmod 700 /tmp/git-ssh-digikokki-blogi-production-digikokki.sh as root@146.185.169.225
+ DEBUG [d605f14b] Command: /usr/bin/env chmod 700 /tmp/git-ssh-digikokki-blogi-production-digikokki.sh
+  INFO [d605f14b] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [f4d2fad6] Running /usr/bin/env git ls-remote https://github.com/digikokki/digikokki-blogi.git HEAD as root@146.185.169.225
+ DEBUG [f4d2fad6] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-digikokki-blogi-production-digikokki.sh" ; /usr/bin/env git ls-remote https://github.com/digikokki/digikokki-blogi.git HEAD )
+ DEBUG [f4d2fad6] 	133ba9f3b504a8dae8ac3af2de6392811e102942	HEAD
+  INFO [f4d2fad6] Finished in 0.814 seconds with exit status 0 (successful).
+  INFO [21f0fd88] Running /usr/bin/env mkdir -p /var/www/craft/shared /var/www/craft/releases as root@146.185.169.225
+ DEBUG [21f0fd88] Command: /usr/bin/env mkdir -p /var/www/craft/shared /var/www/craft/releases
+  INFO [21f0fd88] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [fa6a9467] Running /usr/bin/env mkdir -p /var/www/craft/shared as root@146.185.169.225
+ DEBUG [fa6a9467] Command: /usr/bin/env mkdir -p /var/www/craft/shared
+  INFO [fa6a9467] Finished in 0.063 seconds with exit status 0 (successful).
+ DEBUG [9fd5271b] Running [ -f /var/www/craft/shared/vendor ] as root@146.185.169.225
+ DEBUG [9fd5271b] Command: [ -f /var/www/craft/shared/vendor ]
+ DEBUG [9fd5271b] Finished in 0.061 seconds with exit status 1 (failed).
+ ERROR linked file /var/www/craft/shared/vendor does not exist on 146.185.169.225

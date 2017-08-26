@@ -6,7 +6,8 @@ set :repo_url, "https://github.com/digikokki/digikokki-blogi.git"
 set :deploy_to, "/var/www/craft"
 set :keep_releases, 2
 
-append :linked_files, "vendor"
+append :linked_files, ".env"
+append :linked_dirs, "vendor"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

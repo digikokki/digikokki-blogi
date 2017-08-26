@@ -7,7 +7,7 @@ set :deploy_to, "/var/www/craft"
 set :keep_releases, 2
 
 set :file_permissions_roles, :all
-set :file_permissions_paths, ["storage"]
+set :file_permissions_paths, ["storage", "cpresources"]
 set :file_permissions_users, ["www-data"]
 set :file_permissions_groups, ["www-data"]
 set :file_permissions_chmod_mode, "0744"

@@ -29,7 +29,7 @@ export default {
        }
     },
     mounted() {
-      axios.get("http://cms-digikokki:8888/api/v1/youtube.json").then(response => {
+      axios.get("http://146.185.169.225/api/v1/youtube.json").then(response => {
         //console.log(response.data)
         this.youtubeLinks = response.data.data;
       });

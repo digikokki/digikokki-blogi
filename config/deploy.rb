@@ -3,7 +3,7 @@ lock "3.9.0"
 
 set :application, "digikokki-blogi"
 set :repo_url, "https://github.com/digikokki/digikokki-blogi.git"
-set :deploy_to, "/var/www/craft"
+set :deploy_to, "/var/www/html/craft"
 set :keep_releases, 2
 
 set :file_permissions_roles, :all

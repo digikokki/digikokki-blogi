@@ -1956,8 +1956,8 @@ footer {
   font-weight: 400;
   font-style: normal;
   background-color: #065b9f;
-  transition: .2s ease-out all;
   transform: translateX(0%);
+  transition: all .2s ease-out;
   z-index: 100;
   display: flex;
   flex: 1;
@@ -2030,17 +2030,20 @@ footer {
 
 @media only screen and (min-width: 1024px) {
   #pageNav {
-    box-sizing: border-box;
+    height: 100vh;
+    top: 0;
+    z-index: 1000;
     flex: 0 0 70px;
-    position: fixed;
+    justify-content: flex-start;
     width: 70px;
-    height: 100%;
-    justify-content: flex-start; }
+    left: 0px;
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden; }
     #pageNav #pageNavHeading {
       padding: 0px 4px; }
     #pageNav #brandLogo {
-      width: 80%;
-      margin: 10px auto 10px auto;
+      margin: 15px 0 10px 5px;
       border-radius: 100px;
       text-align: center; }
     #pageNav #mobileNav {
@@ -2054,36 +2057,50 @@ footer {
       color: white;
       font-size: 0.7em; }
       #pageNav #pageNavContent .siteLinkList {
+        width: 260px;
         position: relative;
         margin: 20px 0px;
-        margin-top: 5px;
-        padding: 20px 0px 0px 0px;
+        margin-top: 0px;
+        padding-top: 30px;
         border-top: solid 1px #0151A4; }
         #pageNav #pageNavContent .siteLinkList a {
           text-transform: uppercase; }
         #pageNav #pageNavContent .siteLinkList li {
+          position: relative;
+          display: block;
           margin-bottom: 20px;
-          text-align: center;
-          padding: 10px; }
+          padding: 10px;
+          transition: background .2s linear;
+          /*
+          &:after {
+              content: "";
+              position: absolute;
+              width: 6px;
+              height: 6px;
+              left: 17px;
+              top: 7px;
+              display: block;
+              background: red;
+              -webkit-border-radius: 6px;
+              border: solid 2px #f8f8f8;
+          }
+          */ }
+          #pageNav #pageNavContent .siteLinkList li:hover {
+            background: #2372b1; }
         #pageNav #pageNavContent .siteLinkList i {
+          position: absolute;
           font-size: 17px;
-          color: white !important; }
-      #pageNav #pageNavContent .siteLinkList a span {
-        position: absolute;
-        display: inline-block;
-        opacity: 0;
-        transform: translateX(0px);
-        color: white;
-        z-index: 20;
-        transition: all 0.15s ease-in-out; }
-      #pageNav #pageNavContent .siteLinkList a:hover span {
-        color: rgba(0, 0, 0, 0.44);
-        display: inline-block;
-        margin-left: 15px;
-        width: 150px;
-        opacity: 1;
-        text-align: left;
-        transform: translateX(30px); } }
+          color: white !important;
+          left: 27px; }
+        #pageNav #pageNavContent .siteLinkList span {
+          transition: color .2s;
+          color: rgba(148, 152, 160, 0);
+          padding: 0 0 0 50px; }
+    #pageNav:hover {
+      box-shadow: 3px 0 20px rgba(0, 0, 0, 0.2);
+      width: 260px; }
+      #pageNav:hover #pageNavContent .siteLinkList a span {
+        color: white; } }
 
 #siteWrapper {
   display: flex;

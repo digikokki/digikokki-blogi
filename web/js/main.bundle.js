@@ -20484,7 +20484,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 /* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "digikokki-logo.svg?dd24114ee41d931c48848daea035dc15";
+module.exports = __webpack_require__.p + "digikokki-logo.svg?d78840a10fbb6f9c1d35f8af1479a044";
 
 /***/ }),
 /* 42 */

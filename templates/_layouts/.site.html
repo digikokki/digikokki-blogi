@@ -1,0 +1,31 @@
+{% extends "_layouts/base" %}
+
+{# Set the `bodyClass` variable to the entry's section handle if there is one,
+   or the first URI segment (this is used by the parent template) #}
+{% if bodyClass is not defined %}
+	{% set bodyClass = entry is defined ? entry.section.handle : craft.request.firstSegment %}
+{% endif %}
+
+{# Set the `title` variable to the nav item that matches the first segment #}
+{% if nav[bodyClass] is defined %}
+	{% set title %}{% if title is defined %}{{ title }} - {% endif %}{{ nav[bodyClass].title }}{% endset %}
+{% endif %}
+
+{% block body %}
+
+  {% include "_includes/_top-bar.html" %}
+  <div id="app">
+  <main id="siteContainer">
+    <nav id="pageNav" class="pageLeftBlock">
+      {% include "_includes/_nav.html" %}
+    </nav>
+    <div id="pageContent" class="pageCenterBlock">
+      {% block main %}{% endblock %}
+      {% include "_includes/_footer.html" %}
+    </div>
+    <aside id="pageSidebar" class="pageRightBlock">
+      {% include "_includes/_sidebar.html" %}
+    </aside>
+  </main>
+  </div>
+{% endblock %}

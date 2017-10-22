@@ -18,12 +18,14 @@
     align-items: center;
     justify-content: space-between;
   }
+
   #brandLogo{
     width: 50px;
     margin: 0 auto;
     height: 100%;
     align-self: flex-start;
     margin: 0;
+    display: block;
     img:not(.png) {
       width: 70%;
     }
@@ -31,6 +33,7 @@
       display: none;
     }
   }
+
   #mobileNav{
     display: block;
     color: white;
@@ -111,11 +114,6 @@
     #pageNavHeading{
       padding: 0px 4px;
     }
-    #brandLogo{
-      margin: 15px 0 10px 5px;
-      border-radius: 100px;
-      text-align: center;
-    }
     #mobileNav{
       display: none;
       color: white;
@@ -132,7 +130,7 @@
         position: relative;
         margin: 20px 0px;
         margin-top: 0px;
-        padding-top: 30px;
+        padding-top: 10px;
         border-top: solid 1px $brandColorActive;
         a{
           text-transform: uppercase;
@@ -140,26 +138,27 @@
         li{
           position: relative;
           display: block;
-          margin-bottom: 20px;
+          margin-bottom: 13px;
           padding: 10px;
           transition: background .2s linear;
           &:hover{
               background: #2372b1;
           }
-          /*
-          &:after {
-              content: "";
-              position: absolute;
-              width: 6px;
-              height: 6px;
-              left: 17px;
-              top: 7px;
-              display: block;
-              background: red;
-              -webkit-border-radius: 6px;
-              border: solid 2px #f8f8f8;
+          &#brandLogo{
+            width: 260px;
+            padding-bottom: 19px;
+            padding-top: 13px;
+            border-bottom: 1px solid $brandColorActive;
+            &:hover{
+                background: none;
+            }
           }
-          */
+        }
+        img{
+          width: 50px;
+          position: absolute;
+          left: 10px;
+          top: -5px;
         }
         i{
           position: absolute;
